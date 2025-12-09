@@ -1,0 +1,174 @@
+:root {
+    --neon-blue: #00e0ff;
+    --neon-pink: #ff00ff;
+    --dark-bg: #070710;
+    --mid-bg: #1a1a2e;
+    --light-text: #f0f0f5;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at center, rgba(13, 20, 40, 0.4) 0%, rgba(13, 20, 40, 0) 70%);
+}
+
+.container {
+    background: var(--mid-bg);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 
+        0 0 30px rgba(0, 224, 255, 0.6),
+        0 0 60px rgba(255, 0, 255, 0.3),
+        inset 0 0 10px rgba(0, 224, 255, 0.1);
+    width: 90%;
+    max-width: 480px;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px var(--neon-blue), 0 0 15px rgba(0, 224, 255, 0.5);
+    margin-bottom: 35px;
+    letter-spacing: 3px;
+    font-size: 2.2em;
+    text-transform: uppercase;
+}
+
+#taskInput {
+    width: calc(100% - 165px); 
+    padding: 14px;
+    margin-right: 15px; 
+    border: 2px solid var(--neon-pink);
+    border-radius: 6px;
+    background: #252538;
+    color: var(--light-text);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6), inset 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all var(--transition-speed) ease;
+    display: inline-block; 
+}
+
+#taskInput::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+#addTaskBtn {
+    padding: 14px 20px;
+    background-color: var(--neon-pink);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px var(--neon-pink), 0 0 20px rgba(255, 0, 255, 0.4);
+    transition: all var(--transition-speed) ease;
+    display: inline-block;
+}
+
+#addTaskBtn:hover {
+    background-color: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 25px rgba(0, 224, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    padding: 18px 15px;
+    margin-bottom: 12px;
+    background: rgba(40, 40, 60, 0.4);
+    border-radius: 6px;
+    border-left: 6px solid var(--neon-blue);
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#taskList li:hover {
+    background: rgba(40, 40, 60, 0.7);
+    transform: translateX(5px);
+    box-shadow: 0 0 12px rgba(0, 224, 255, 0.5);
+}
+
+#taskList li input[type="checkbox"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--neon-pink);
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+    background: transparent;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#taskList li input[type="checkbox"]:checked {
+    border-color: var(--neon-blue);
+    background-color: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+    transform: scale(1.1);
+}
+
+#taskList li input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: var(--dark-bg);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#taskList li span {
+    flex-grow: 1;
+    font-size: 1.1em;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #555555 !important;
+    border-left: 6px solid var(--neon-pink) !important; 
+    box-shadow: none !important;
+    opacity: 0.5;
+    transition: all var(--transition-speed) ease;
+}
+
+#taskList li button {
+    background: none;
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 8px 15px;
+    margin-left: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+}
+
+#taskList li button:hover {
+    background-color: var(--neon-pink);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-pink);
+}
