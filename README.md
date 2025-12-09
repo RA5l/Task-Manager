@@ -1,4 +1,3 @@
-```markdown
 # Task Manager
 
 A simple web application to manage daily tasks, built with HTML, CSS (Neon Style), and JavaScript. It uses localStorage to persist tasks across browser sessions.
