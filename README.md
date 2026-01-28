@@ -40,4 +40,8 @@ This project is a great practice for learning:
 - DOM manipulation
 - Event handling and delegation
 - Data persistence with localStorage
-```
+
+## Live Demo
+
+[https://taskmanager-by-raseel.netlify.app/](https://taskmanager-by-raseel.netlify.app/)
+
